@@ -34,7 +34,7 @@ public class Wallethub extends PageActions{
         PageActions page = new PageActions();
 
         //Login to the page
-        //page.wLogIn(uName.trim(), pWord.trim());
+        page.wLogIn(uName.trim(), pWord.trim());
 
         //Writing review
         page.wWriteReview();

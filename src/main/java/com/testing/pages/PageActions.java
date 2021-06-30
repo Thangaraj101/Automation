@@ -104,7 +104,6 @@ public class PageActions {
                    submitReview(rString);
                }
                wait.until(ExpectedConditions.presenceOfElementLocated(w_UserProfile));
-           }else {
                driver.findElement(By.cssSelector("body")).sendKeys(Keys.PAGE_UP);
                Thread.sleep(2000);
                action.moveToElement(driver.findElement(w_UserProfile)).build().perform();
@@ -117,7 +116,8 @@ public class PageActions {
                driver.findElement(w_ReviewFeed).click();
                wait.until(ExpectedConditions.presenceOfElementLocated(w_YourReviewHeader));
                Assert.assertTrue(driver.findElement(w_YourReviewHeader).isDisplayed(),"Your review is not posted under review section");
-           }
+
+           }else Assert.fail("The review section is not displayed, please try some other options to review");
        }catch(Exception e){
            Assert.fail("Script failed in writing review, Method name- "+new Throwable().getStackTrace()[0].getMethodName());
        }
